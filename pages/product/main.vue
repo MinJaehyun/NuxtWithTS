@@ -1,17 +1,21 @@
 <template>
   <div>
-    <p>첫 번째 carts: {{ loadData }}</p>
-    <Logo :loadData="loadData"/>
+    <Products :loadData="loadData"/>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Logo from '@/components/Logo.vue'
+import Products from '@/components/Products.vue'
 import axios from 'axios'
-
+interface respondeData {
+  id: number,
+  imageUrl: string,
+  name: string,
+  price: string
+}
 export default Vue.extend({
-  name: '',
+  name: 'Main',
   // 방법1 적용 시, 아래 사용 한다. 방법2 적용 시, server 에서 data 를 처리하고 보내주므로, data 설정할 필요 없다!
   // data(){
   //   return {
@@ -19,7 +23,7 @@ export default Vue.extend({
   //   }
   // },
   components: {
-    Logo
+    Products
   },
   // 방법1. created axios 요청
   // async created() {
@@ -30,9 +34,13 @@ export default Vue.extend({
 
   // 방법2. asyncData axios 요청
   async asyncData(){
-    const response = await axios.get('http://localhost:3000/carts')  // server url, https 아니다.
-    console.log(response.data[0]);
-    const loadData = response.data;
+    const response = await axios.get('http://localhost:3000/products')  // server url, https 아니다.
+    // console.log(typeof response.data); // object
+    // 반복되는 이미지를 랜덤하게 호출하기
+    const loadData = response.data.map((item: respondeData) => ({
+      ...item,
+      imageUrl: `${item.imageUrl}?random=${Math.random()}`
+    }))
     return { loadData: loadData }  // 객체 축약 가능
   }
 })
@@ -51,5 +59,7 @@ export default Vue.extend({
 4. asyncData 는 page 폴더 아래에서만 사용 가능하다.
 - component 에서 사용 불가능
 - component 에서 사용하기 위해서는 데이터를 내려준다.
-5.
+5. map 반환
+=> ({}) 이면 return 사용 안해도 된다.
+=> {} 사용하면 return {} 처리해야 한다.
 -->
