@@ -1,5 +1,6 @@
 <template>
   <div>
+    index test
   </div>
 </template>
 

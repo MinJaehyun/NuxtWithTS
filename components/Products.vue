@@ -20,6 +20,7 @@ export default Vue.extend({
       // console.log(index);
       this.$router.push(`${index}`)
     },
+
   },
 })
 </script>

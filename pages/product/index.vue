@@ -1,6 +1,6 @@
 <template>
   <div>
-    test
+    product index test
   </div>
 </template>
 

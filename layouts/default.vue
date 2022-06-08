@@ -19,6 +19,4 @@ export default Vue.extend({
 </script>
 
 <style scoped></style>
-<!--
-1. <Nuxt> 태그를 하단에 위치 시키는게 특징!
--->
+<!-- <Nuxt> 태그를 하단에 위치 시키는게 특징 -->
