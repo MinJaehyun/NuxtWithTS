@@ -12,9 +12,9 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: '',
-  created() {
-    console.log(this.$route);
-  }
+  // created() {
+  //   console.log(this.$route);
+  // }
 })
 </script>
 
