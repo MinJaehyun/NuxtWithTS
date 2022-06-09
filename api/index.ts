@@ -8,11 +8,18 @@ function fetchProductById(id: string) {
   return instance.get(`/products/${id}`)
 }
 
-function fetchProductByyKeyword(keyword: string) {  // 설정하고 오면 string 지정될 듯
+// 설정하고 오면 string 지정될 듯
+function fetchProductByyKeyword(keyword: string) {
   return instance.get(`/products?name_like=${keyword}`)
 }
 
-export { fetchProductById, fetchProductByyKeyword }
+// 장바구니에 각 상품을 서버에 담는다
+function createCartItem(cartItem: any) {
+  return instance.post('/carts', cartItem)
+}
 
-// axios.create 검색?
-// .create() 메서드를 사용해 사용자 정의 구성을 사용하는 axios 인스턴스를 생성할 수 있습니다.
+function fetchCartItem() {
+  return instance.get('/carts')
+}
+
+export { fetchProductById, fetchProductByyKeyword, createCartItem, fetchCartItem }

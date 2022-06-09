@@ -8,9 +8,21 @@
         - https://typescript-kr.github.io/ (기본내용, 고급 일단 제외)
     * SEO 최적화 까지 진행하기
 
+### 06월 09일
+    1. nuxt 강의 진행 
+        - 70%: 섹션5 ~ 섹션6 (남은 섹션: 섹션7~8, 섹션1)
+        - 섹션7 배포 진행하기 전, TS 학습 하기
+        - Getters: https://vuex.vuejs.org/guide/getters.html#the-mapgetters-helper 학습하기
+        - actions -> mutations -> state -> getters 로 가져온다
+    2. TS 학습하기
+        - 진행률: 50%
+        - 섹션12 진행하기(1/5 완료)
+    3. TS 학습하기
+        - 코딩애플 내일 학습하기
+
 ### 06월 08일
     1. nuxt 강의 진행 
-        - [v] 섹션1 ~ 섹션4 (검색을 위한 API 함수 설계 및 구현)
+        - 50% 완료: 섹션1 ~ 섹션4 (검색을 위한 API 함수 설계 및 구현) 
         - 콜백함수, promise(then ~ catch) 
         - propSync 사용 방법 + v-model 사용하기: https://kr.vuejs.org/v2/guide/components-custom-events.html
         - 라이클 사이클 이해: https://nuxtjs.org/docs/concepts/nuxt-lifecycle/

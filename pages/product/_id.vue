@@ -3,6 +3,7 @@
     <h1>{{ $route.params.id }}: 상세 페이지</h1>
     <p class="test-css">{{ product.name }}</p>
     <p>{{ product.price }}</p>
+    <p><button @click="setCartItems">장바구니 담기</button></p>
     <img :src="product.imageUrl" alt="">
   </div>
 </template>
@@ -10,13 +11,18 @@
 <script lang="ts">
 import { Context } from '@nuxt/types';
 import Vue from 'vue'
-import { fetchProductById } from "~/api";
+import {createCartItem, fetchProductById} from "~/api";
 
 export default Vue.extend({
   name: '',
+  data() {
+    return {
+      product: {},
+    }
+  },
   // life cycle - true, false 처리 시 화면 이해 하는지
   validate(ctx: Context): Promise<boolean> | boolean {
-    console.log('ctxss:', ctx)
+    // console.log('ctx :', ctx)
     return true;
   },
   asyncData(context) {
@@ -29,14 +35,26 @@ export default Vue.extend({
     // return { product }
     return fetchProductById(id).then((response) => {
       const {data} = response || {};
+      // console.log(data);  // 한개의 객체
       return {product: data};
     })
-  }
+  },
+
+  methods: {
+    setCartItems() {
+      // console.log(this.product);  // object
+      // 현재 상품을 서버에 담는다.
+      createCartItem(this.product).then(() => {
+        this.$store.dispatch('PUSH_ITEM', this.product)
+        this.$router.push({name: 'product-carts'});
+      })
+      // console.log(response.data);
+      // response.data 한개를 카트에 담는다.
+      // const response = await fetchCartItem();
+      // console.log(response.data);
+    },
+  },
 })
 </script>
 
 <style scoped></style>
-<!--
-asyncData 는 this 사용할 수 없다.
-- this 대신 인자로 { params } 를 넣는다.
--->
