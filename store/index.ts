@@ -1,20 +1,20 @@
 import {fetchCartItem} from "~/api";
 import {state} from './state'
 
-const store = {
-  state: state
+export const store = {
+  state
 }
 
 export const mutations = {
   // vuex TS 적용 방법 미진행이므로, any 처리하고 nuxt 완료 후 ts 진행하기
-  async setCartItems(state: any, data: any) {
-    // console.log('state:', state, data)
+  setCartItems(context: any,data: any) {
     const newItem: any = {
       ...data,
       imageUrl: `${data.imageUrl}?random=${Math.random()}`
     }
     // FIXME: 에러
-    state.cartItems.push(newItem);
+    console.log('context:', )
+    context.cartItems.push(newItem);
   },
   setAllCart(state: any, data: any) {
     state.cartItems = data;

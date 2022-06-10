@@ -12,12 +12,13 @@
 import { Context } from '@nuxt/types';
 import Vue from 'vue'
 import {createCartItem, fetchProductById} from "~/api";
+import { MetaInfo } from 'vue-meta';
 
 export default Vue.extend({
   name: '',
   data() {
     return {
-      product: {},
+      product: '',
     }
   },
   // life cycle - true, false 처리 시 화면 이해 하는지
@@ -26,7 +27,7 @@ export default Vue.extend({
     return true;
   },
   asyncData(context) {
-    console.log(context); // $axios, $config, 등등 사용하기
+    // console.log(context); // $axios, $config, 등등 사용하기
     const id = context.params.id
     // const response = fetchProductById(id);
     // console.log('response: ', response);
@@ -39,15 +40,32 @@ export default Vue.extend({
       return {product: data};
     })
   },
-  head: {
-    title: '상품 정보 상세 페이지',
-    meta: [
-      {
-        hid: 'desc',
-        name: 'desc',
-        content: '페이지 상세 설명'
-      },
-    ],
+  created() {
+    console.log(this.product);
+
+  },
+  // head: {
+  //   title: this.product ,
+  //   meta: [
+  //     {
+  //       hid: 'description',
+  //       name: 'description',
+  //       content: '페이지 상세 설명'
+  //     },
+  //   ],
+  // },
+  head(): MetaInfo {
+    // console.log(this.product);
+    return {
+      title: this.product.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.product.name,
+        },
+      ],
+    }
   },
   methods: {
     setCartItems() {
@@ -67,3 +85,8 @@ export default Vue.extend({
 </script>
 
 <style scoped></style>
+<!-- TS
+head 에서 인식하지 못하는 this 를
+import { MetaInfo } from 'vue-meta';
+head(): MetaInfo {} 설정하여 해결
+-->
