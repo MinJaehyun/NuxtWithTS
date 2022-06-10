@@ -1,22 +1,14 @@
-# nuxt with TS Project
-
-## 주의 사항
-    * 진행 상황 슬랙 공유
-    * 컨벤션: 카멜케이스
-    * 공식문서 또는 공신력 있는 블로그 위주로 보도록 하기
-    * JS, TS, HTML 학습하기
-        - https://typescript-kr.github.io/ (기본내용, 고급 일단 제외)
+# nuxt with TS    
 
 ### 06월 10일
-    1. nuxt 강의 진행
-        - [v] 100%: 섹션 1, 7, 8 진행
-    2. TS 강의 진행
-        - [x] 미진행: 섹션 12
-    3. TS 추가 강의 진행
+    1. nuxt 강의 
+        - [v] 100%: 섹션 1, 7, 8 
+    2. TS 강의 미진행: 섹션 12
+    3. TS 추가 강의 미진행
         - [x] 0%: 1부터 진행하기
 
 ### 06월 09일
-    1. nuxt 강의 진행 
+    1. nuxt 강의
         - 70%: 섹션5 ~ 섹션6 (남은 섹션: 섹션7~8, 섹션1)
         - 섹션7 배포 진행하기 전, TS 학습 하기
         - Getters: https://vuex.vuejs.org/guide/getters.html#the-mapgetters-helper 학습하기
