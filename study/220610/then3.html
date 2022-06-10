@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <p>비동기적으로 사용하고 싶은 코드를 Promise 안에 작성한다</p>
+  <p>Promise 는 첫 번째 인자로 resolve, 두 번째 인자로 reject 를 입력받는다.</p>
+  <h6>프로미스 3가지 상태
+    <p>Pending(대기) : 비동기 처리 로직이 아직 완료되지 않은 상태</p>
+    <p>Fulfilled(이행) : 비동기 처리가 완료되어 프로미스가 결과 값을 반환해준 상태</p>
+    <p>Rejected(실패) : 비동기 처리가 실패하거나 오류가 발생한 상태</p>
+  </h6>
+  <p>
+    1. new Promise 의 resolve 는 then 이하에 전달되어 지고,
+    2. new Promise 의 reject 는 catch 이하에 전달되어 진다.
+  </p>
 </head>
 <body>
 <script>
@@ -11,14 +21,13 @@
   const promise = new Promise((resolve, reject) => {
     console.log('doing');
     setTimeout(()=>{
-      resolve('mjh')
-      // reject(new Error('no network'))
+      resolve('mjh')                 //
+      // reject(new Error('no network'))   //
     }, 2000)
   });
 
   // 2.
-  // 상단 Promise 가 정상적으로 잘 수행되면, resolve 라는 콜백함수를 통해서
-  // 전달한 값이 하단에 value 라는 파라미터로 전달되어 진다.
+  // 상단 Promise 가 정상적으로 잘 수행되면, resolve 라는 콜백함수를 통해서 전달한 값이 하단 value 라는 파라미터로 전달되어 진다.
  promise.then(value => {
     console.log(value);
   })
