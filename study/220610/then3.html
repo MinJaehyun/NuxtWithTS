@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <p>비동기적으로 사용하고 싶은 코드를 Promise 안에 작성한다</p>
+</head>
+<body>
+<script>
+  // 1.
+  const promise = new Promise((resolve, reject) => {
+    console.log('doing');
+    setTimeout(()=>{
+      resolve('mjh')
+      // reject(new Error('no network'))
+    }, 2000)
+  });
+
+  // 2.
+  // 상단 Promise 가 정상적으로 잘 수행되면, resolve 라는 콜백함수를 통해서
+  // 전달한 값이 하단에 value 라는 파라미터로 전달되어 진다.
+ promise.then(value => {
+    console.log(value);
+  })
+  .catch(error => {
+    console.log(error);
+  })
+  .finally(()=>{
+    console.log('항상 실행되는 함수');
+  });
+</script>
+</body>
+</html>
