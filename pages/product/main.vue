@@ -10,7 +10,7 @@ import Vue from 'vue'
 import Products from '@/components/Products.vue'
 import Search from '@/components/Search.vue'
 import {fetchProductByyKeyword, fetchProduct} from "~/api";
-// import axios from 'axios';
+import axios from 'axios';
 
 interface respondeData {
   id: number,
@@ -47,7 +47,8 @@ export default Vue.extend({
   async asyncData(){
     // console.log(context);
     // const response = await axios.get('http://localhost:3000/products')  // server url, https 아니다.
-    const response = await fetchProduct();
+    const response = await axios.get('https://my-json-server.typicode.com/minjaehyun/products')  // server url, https 아니다.
+    // const response = await fetchProduct();
     // console.log(typeof response.data); // object
     // 반복되는 이미지를 랜덤하게 호출하기
     const loadData = response.data.map((item: respondeData) => ({
