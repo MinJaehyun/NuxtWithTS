@@ -39,7 +39,16 @@ export default Vue.extend({
       return {product: data};
     })
   },
-
+  head: {
+    title: '상품 정보 상세 페이지',
+    meta: [
+      {
+        hid: 'desc',
+        name: 'desc',
+        content: '페이지 상세 설명'
+      },
+    ],
+  },
   methods: {
     setCartItems() {
       // console.log(this.product);  // object

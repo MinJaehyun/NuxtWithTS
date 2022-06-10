@@ -9,7 +9,7 @@
 import Vue from 'vue'
 import Products from '@/components/Products.vue'
 import Search from '@/components/Search.vue'
-import {fetchProductByyKeyword, fetchProduct} from "~/api";
+import {fetchProductByyKeyword} from "~/api";
 import axios from 'axios';
 
 interface respondeData {
