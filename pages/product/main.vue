@@ -47,7 +47,7 @@ export default Vue.extend({
   async asyncData(){
     // console.log(context);
     // const response = await axios.get('http://localhost:3000/products')  // server url, https 아니다.
-    const response = await axios.get('https://my-json-server.typicode.com/minjaehyun/products')  // server url, https 아니다.
+    const response = await axios.get('https://my-json-server.typicode.com/minjaehyun/shop-api/products')  // server url, https 아니다.
     // const response = await fetchProduct();
     // console.log(typeof response.data); // object
     // 반복되는 이미지를 랜덤하게 호출하기
