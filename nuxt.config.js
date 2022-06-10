@@ -51,7 +51,7 @@ export default {
   },
   // server port
   server: {
-    port: process.env.NODE_ENV === 'production' ? null : 5000
+    port: process.env.NODE_ENV === 'production' ? null : 3000
   },
   env: {
     // 기존 로컬 서버와 배포 서버 설정

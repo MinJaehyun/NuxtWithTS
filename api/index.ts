@@ -7,7 +7,7 @@ const instance = axios.create({
 })
 
 function fetchProduct() {
-  return instance.get('products')
+  return instance.get('/products');
 }
 
 function fetchProductById(id: string) {
@@ -28,4 +28,4 @@ function fetchCartItem() {
   return instance.get('/carts')
 }
 
-export { fetchProductById, fetchProductByyKeyword, createCartItem, fetchCartItem }
+export { fetchProductById, fetchProductByyKeyword, createCartItem, fetchCartItem, fetchProduct }
