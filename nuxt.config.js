@@ -51,6 +51,9 @@ export default {
   },
   // server port
   server: {
-    port: 8000 // default: 3000
+    // port: 8000 // default: 3000
+    port: process.env.NODE_ENV === 'production' ? null : 5000
   },
+  // Nuxt 배포를 위한 설정 default 는 server 이다.
+  target: 'server'
 }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <ul>
+    <li>new Promise() 메서드를 호출하면 대기(Pending) 상태가 됩니다.</li>
+    <li>콜백 함수의 인자 resolve를 아래와 같이 실행하면 이행(Fulfilled) 상태가 됩니다.</li>
+    <li></li>
+  </ul>
+</head>
+<body>
+<script>
+  // Promise 는 첫 번째 인자로 resolve, 두 번째 인자로 reject 를 입력받는다.
+  // Promise 수행을 성공 시, resolve 를 실행하고, 실패 시 reject 를 실행한다.
+  const promise1 = new Promise((resolve, reject) => {
+    resolve('Success!');
+  });
+  // Promise 가 수행될 때 호출되는 Function 으로, 이행 값 하나를 인수로 받습니다. (value)
+  promise1.then((value) => {
+    console.log(value);
+  });
+</script>
+</body>
+</html>
