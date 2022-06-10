@@ -51,8 +51,10 @@ export default {
   },
   // server port
   server: {
-    // port: 8000 // default: 3000
-    port: process.env.NODE_ENV === 'production' ? null : 5000
+    // 기존 로컬 서버와 배포 서버 설정
+    baseURL: process.env.NODE_ENV === 'production'
+    ? 'https://my-json-server.typicode.com/minjaehyun/shop-api'
+    : 'http://localhost:3000'
   },
   // Nuxt 배포를 위한 설정 default 는 server 이다.
   target: 'server'

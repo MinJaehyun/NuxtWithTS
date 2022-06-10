@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3000',
+  // local, deploy 환경 설정
+  // baseURL: 'http://localhost:3000',
+  baseURL: process.env.baseURL,
 })
 
 function fetchProductById(id: string) {
