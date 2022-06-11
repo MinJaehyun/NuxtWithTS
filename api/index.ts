@@ -24,6 +24,7 @@ function createCartItem(cartItem: any) {
   return instance.post('/carts', cartItem)
 }
 
+// 장바구니에 담긴 카트 리스트
 function fetchCartItem() {
   return instance.get('/carts')
 }

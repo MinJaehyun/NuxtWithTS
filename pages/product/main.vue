@@ -1,5 +1,7 @@
 <template>
   <div>
+    <!-- {{ loadData }} , 상품 전체 리스트는 존재하므로 가져올 수 있다. -->
+    <!-- {{ $store.state.cartItems }} 안되는 이유? 애초에 카트에 담긴 목록을 불러오는 로직이 script 에 없다 -->
     <Search :inputSearch="inputSearch" @onClickInputSearch="onClickInputSearch"/>
     <Products :loadData="loadData"/>
   </div>
@@ -45,12 +47,12 @@ export default Vue.extend({
 
   // 방법2. asyncData axios 요청
   async asyncData(){
+    // 상품 목록 호출
     // console.log(context);
     // const response = await axios.get('http://localhost:3000/products')  // server url, https 아니다.
     const response = await axios.get('https://my-json-server.typicode.com/minjaehyun/shop-api/products')  // server url, https 아니다.
     // const response = await fetchProduct();
-    // console.log(typeof response.data); // object
-    // 반복되는 이미지를 랜덤하게 호출하기
+    // 이미지 랜덤 호출
     const loadData = response.data.map((item: respondeData) => ({
       ...item,
       imageUrl: `${item.imageUrl}?random=${Math.random()}`
