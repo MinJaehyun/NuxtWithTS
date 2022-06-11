@@ -4,6 +4,7 @@
     <router-link to="/" style="border: 1px solid dodgerblue">move to Home page</router-link>
     <router-link to="/product/" style="border: 1px solid dodgerblue">move to product index page</router-link>
     <router-link to="/product/main" style="border: 1px solid dodgerblue">move to product main page</router-link>
+    <router-link to="/users/main" style="border: 1px solid dodgerblue">move to user list</router-link>
     <Nuxt />
   </div>
 </template>

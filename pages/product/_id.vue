@@ -36,13 +36,8 @@ export default Vue.extend({
     // return { product }
     return fetchProductById(id).then((response) => {
       const {data} = response || {};
-      // console.log(data);  // 한개의 객체
       return {product: data};
     })
-  },
-  created() {
-    console.log(this.product);
-
   },
   // head: {
   //   title: this.product ,
@@ -69,16 +64,11 @@ export default Vue.extend({
   },
   methods: {
     setCartItems() {
-      // console.log(this.product);  // object
       // 현재 상품을 서버에 담는다.
       createCartItem(this.product).then(() => {
         this.$store.dispatch('PUSH_ITEM', this.product)
         this.$router.push({name: 'product-carts'});
       })
-      // console.log(response.data);
-      // response.data 한개를 카트에 담는다.
-      // const response = await fetchCartItem();
-      // console.log(response.data);
     },
   },
 })
