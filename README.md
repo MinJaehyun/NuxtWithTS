@@ -1,9 +1,13 @@
 # Nuxt With TS    
 
+### 06월 14일
+    1. test moment.js
+    2. 
+
 ### 06월 11 ~ 12일 
     1. [v] TS 섹션12 - state 완료 및 코드 적용 
     2. [v] vuex 학습 - 코지코더 유튭
-    3. [] 한 주 정리 - 노션 기록, 블로그 개념 ㅡ 하나로 정리
+    3. [v] 한 주 정리 - 노션 기록, 블로그 개념 ㅡ 하나로 정리
     4. [] TS 코딩애플 학습
     5. [v] then1~3.html 정리, 불필요한 내용 및 파일 삭제
     6. [] Getters: https://vuex.vuejs.org/guide/getters.html#the-mapgetters-helper 

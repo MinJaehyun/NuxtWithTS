@@ -1,9 +1,15 @@
 import {fetchCartItem} from "~/api";
-import {state} from './state'
 import axios from "axios";
+import {generateState} from "~/store/generateState";
 
-export const store = {
-  state
+export const state = generateState();
+
+export const getters = {
+  getUsername(state: any) {
+    // console.log('state: ', Object.keys(state))
+    // console.log('getters:', state.usersData)
+    return state.usersData
+  },
 }
 
 export const mutations = {
@@ -18,6 +24,7 @@ export const mutations = {
     state.cartItems = data;
   },
   setUserData(state: any, data: any){
+    // console.log('state : ', JSON.stringify(state));
     state.usersData = data;
   },
 }
@@ -26,7 +33,7 @@ export const actions = {
   FETCH_CART_ITEMS(context: any){
     // 서버에 목록을 가져와서, mutations 에서 변경할 것이다.
     fetchCartItem().then((res) => {
-      console.log('res:', res.data);
+      // console.log('res:', res.data);
       context.commit('setAllCart', res.data);
     })
   },
