@@ -28,7 +28,8 @@
       "@nuxt/types",
       "@nuxtjs/axios",
       "@types/node",
-      "vue-meta" // *
+      "vue-meta",
+      "@nuxtjs/moment",
     ]
   },
   "exclude": [

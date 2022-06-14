@@ -1,15 +1,14 @@
 <template>
   <div>
     <h1>user list 출력하기</h1>
-<!--    <p>{{ $store.state.usersData }}</p>-->
-<!--    <p>{{ $store.getters.getUsername }}</p>-->
     {{ childGetUsername }}
+    {{ $moment() }}
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import axios from 'axios';
+// import axios from 'axios';
 
 export default Vue.extend({
   name: "Users",

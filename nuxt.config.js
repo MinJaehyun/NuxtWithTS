@@ -32,6 +32,10 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    ["@nuxtjs/moment", {
+      defaultLocale: "ko",
+      locales: ["ko"]
+    }],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
